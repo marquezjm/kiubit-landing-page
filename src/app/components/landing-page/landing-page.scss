@@ -1,14 +1,86 @@
-header{
+header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 20px;
-    background-color: #f8f9fa;
-    nav{
-        ul{
+    background-color: var(--white, #FFFFFF);
+    
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        text-decoration: none;
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            //font-weight: bolder;
+            color: var(--primary, #38C0DA);
+        }
+        
+        &:hover {
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+    }
+    
+    nav {
+        ul {
             list-style: none;
             display: flex;
             gap: 30px;
+            margin: 0;
+            padding: 0;
+            
+            li a {
+                text-decoration: none;
+                color: var(--color-gray, #1B1C1D);
+                padding: 8px 16px;
+                border-radius: 4px;
+                transition: color 0.3s ease;
+
+                
+                &:hover {
+                    //background-color:;
+                    color:  var(--primary-light, #6DD7EB);
+                }
+            }
         }
-    };
+    }
+    .botones {
+        display: flex;
+        gap: 16px;
+        .login{
+            background-color: var(--color-gray-light, #6750A4);
+            color: var(--black, #000000);
+            border: none;
+            padding: 12px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: var(--color-surface-variant, #5C4B8A);
+            }
+        }
+        .signup{
+            background-color: var(--color-primary, #6750A4);
+            color: var(--color-on-primary, #FFFFFF);
+            border: none;
+            padding: 12px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: rgb(from var(--color-primary) r g b / 0.9);
+            }
+        }
+    }
 }

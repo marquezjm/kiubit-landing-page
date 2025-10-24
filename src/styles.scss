@@ -1,6 +1,99 @@
 /* You can add global styles to this file, and also import other style files */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
+
+
+:root {
+  /* 🎨 Colores principales */
+  --color-primary: #38C0DA;        /* TU color base */
+  --color-on-primary: #FFFFFF;
+
+  --color-secondary: #2E6E71;      /* complementario / neutro azulado */
+  --color-on-secondary: #FFFFFF;
+
+  --color-tertiary: #3D7A4F;       /* acento verde */
+  --color-on-tertiary: #FFFFFF;
+
+  /* 🧱 Fondo y superficies */
+  --color-background: #F8FAFB;     /* fondo general claro */
+  --color-on-background: #1B1C1D;  /* texto principal sobre background */
+
+  --color-surface: #FFFFFF;        /* tarjetas, paneles */
+  --color-on-surface: #1B1C1D;
+
+  --color-surface-variant: #E6F7FA; /* variante sutil ligada al primary */
+  --color-on-surface-variant: #15393D;
+
+  /* 🧭 Bordes y separadores */
+  --color-outline: #8AAEB2;
+
+  /* 💬 Estados (feedback) */
+  --color-error: #B3261E;
+  --color-on-error: #FFFFFF;
+
+  --color-success: #0F9D58;
+  --color-warning: #F9A825;
+  --color-info: #0288D1;
+
+  /* ⚪ Colores básicos */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-gray-light: #E0E0E0;
+  --color-gray: #9E9E9E;
+  --color-gray-dark: #424242;
+}
+
+/* Tema oscuro: estos valores sobrescriben las variables para modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #82D3E5;        /* versión clara del primary para dark mode */
+    --color-on-primary: #00323a;
+
+    --color-secondary: #A8D7DA;
+    --color-on-secondary: #0F2D30;
+
+    --color-tertiary: #A3D0A9;
+    --color-on-tertiary: #072914;
+
+    --color-background: #121314;
+    --color-on-background: #E1E2E3;
+
+    --color-surface: #1C1D1E;
+    --color-on-surface: #E1E2E3;
+
+    --color-surface-variant: #254044;
+    --color-on-surface-variant: #CFEFF3;
+
+    --color-outline: #5E6A6C;
+
+    --color-error: #FFB4A9;
+    --color-on-error: #680003;
+
+    --color-success: #81C784;
+    --color-warning: #FFD54F;
+    --color-info: #4FC3F7;
+
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-gray-light: #2E3233;
+    --color-gray: #9BA3A3;
+    --color-gray-dark: #D1D5D6;
+  }
+}
+
+/* 📝 Utilidades de tipografía */
+.font-light { font-weight: 300; }
+.font-regular { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.font-black { font-weight: 900; }
