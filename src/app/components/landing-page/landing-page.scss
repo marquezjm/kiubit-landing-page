@@ -1,9 +1,12 @@
 header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;  // Cambio de space-around a space-between
     align-items: center;
-    padding: 20px;
+    padding: 15px 20px;              // Reducir padding vertical
     background-color: var(--white, #FFFFFF);
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;                 // Permitir wrap en pantallas muy pequeñas
     
     .logo {
         display: flex;
@@ -111,6 +114,59 @@ main{
                 transform: scale(1.08);
                 transform-origin: center;
                 box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+            }
+        }
+    }
+}
+
+// Media queries para header responsivo
+@media (max-width: 768px) {
+    header {
+        padding: 10px 15px;
+        
+        nav ul {
+            gap: 15px;  // Reducir gap entre elementos de navegación
+            
+            li a {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        .botones {
+            gap: 8px;
+            
+            .login, .signup {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    header {
+        padding: 8px 12px;
+        flex-direction: column;
+        gap: 12px;
+        
+        .logo {
+            align-self: flex-start;
+        }
+        
+        nav ul {
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .botones {
+            align-self: stretch;
+            justify-content: center;
+            
+            .login, .signup {
+                flex: 1;
+                max-width: 120px;
             }
         }
     }

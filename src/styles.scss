@@ -10,6 +10,16 @@
     font-style: normal;
 }
 
+/* Prevenir scroll horizontal y asegurar ancho completo */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    min-width: 320px; /* Ancho mínimo para dispositivos muy pequeños */
+}
+
 
 :root {
   /* 🎨 Colores principales */
@@ -195,21 +205,26 @@ $container-padding-x: 1rem;
 // Container único (centrado y con padding lateral). Su max-width cambia según el viewport.
 .container {
     width: 100%;
-    //padding-left: $container-padding-x;
-    //padding-right: $container-padding-x;
+    padding-left: $container-padding-x;
+    padding-right: $container-padding-x;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
     max-width: 100%; // por defecto en dispositivos pequeños
+    
+    // Asegurar que nunca exceda el viewport
+    min-width: 0;
 }
 
 // Container fluido (opcional, siempre 100%)
 .container-fluid {
     width: 100% !important;
-    //padding-left: $container-padding-x;
-    //padding-right: $container-padding-x;
+    padding-left: $container-padding-x;
+    padding-right: $container-padding-x;
     margin-left: 0;
     margin-right: 0;
+    box-sizing: border-box;
+    min-width: 0;
 }
 
 // Aplicar max-width responsivo en cada breakpoint para el mismo .container
@@ -221,4 +236,33 @@ $container-padding-x: 1rem;
             max-width: $max;
         }
     }
+}
+
+// Media queries adicionales para dispositivos muy pequeños
+@media (max-width: 575px) {
+    .container {
+        padding-left: 0.75rem;  // Reducir padding en móviles
+        padding-right: 0.75rem;
+        max-width: 100vw;       // Asegurar que use todo el viewport
+    }
+}
+
+@media (max-width: 375px) {
+    .container {
+        padding-left: 0.5rem;   // Padding aún menor para dispositivos muy pequeños
+        padding-right: 0.5rem;
+    }
+}
+
+// Utilidades adicionales para prevenir problemas de ancho
+.w-full { width: 100% !important; }
+.min-w-0 { min-width: 0 !important; }
+.overflow-x-hidden { overflow-x: hidden !important; }
+
+// Clases responsivas para texto en móviles
+@media (max-width: 575px) {
+    .text-7xl { font-size: $fs-4xl; } // Reducir tamaño de títulos en móviles
+    .text-6xl { font-size: $fs-3xl; }
+    .text-5xl { font-size: $fs-2xl; }
+    .text-4xl { font-size: $fs-xl; }
 }
