@@ -5,9 +5,9 @@
     </a>
     <nav>
         <ul>
-            <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="/about">About</a></li>
-            <li><a routerLink="/contact">Contact</a></li>
+            <li><a routerLink="/" role="menuitem" tabindex="0">Home</a></li>
+            <li><a routerLink="/about" role="menuitem" tabindex="0">About</a></li>
+            <li><a routerLink="/contact" role="menuitem" tabindex="0">Contact</a></li>
         </ul>
     </nav>
     <div class="botones">
@@ -16,9 +16,19 @@
     </div>
 </header>
 <main>
-    <section>
-        <h2>Discover Kiubit</h2>
-        <p>Your gateway to innovative solutions.</p>
+    <section class="hero">
+        <div class="container px-6">
+            <h1 class="text-7xl">Domina las matemáticas con Kiubit</h1>
+            <p class="text-lg">Aprende a tu ritmo con nuestros cursos en linea, diseñados para todos los niveles.</p>      
+            <button class="button">Explorar Cursos</button>
+        </div>
+    </section>
+    <section class="about">
+        <div class="px-6">
+            <h1 class="text-7xl">Domina las matemáticas con Kiubit</h1>
+            <p class="text-lg">Aprende a tu ritmo con nuestros cursos en linea, diseñados para todos los niveles.</p>      
+            <button class="button">Explorar Cursos</button>
+        </div>
     </section>
 </main>
 <footer>

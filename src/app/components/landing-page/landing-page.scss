@@ -44,6 +44,7 @@ header {
                 padding: 8px 16px;
                 border-radius: 4px;
                 transition: color 0.3s ease;
+                cursor: pointer;
 
                 
                 &:hover {
@@ -80,6 +81,36 @@ header {
 
             &:hover {
                 background-color: rgb(from var(--color-primary) r g b / 0.9);
+            }
+        }
+    }
+}
+main{
+    .hero{
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--color-white);
+        background-image: linear-gradient(rgba(11, 17, 32, 0.5) 0%, rgba(11, 17, 32, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNfEYwz9-WsFL9Cr_vrMiOhU5clWoj02tvnxqflb8lxUfYPvj1u6xdgeP8XHG1mSL2ZBW2xGKWy7TDDsYiqyDsqN8iBXisPblfDl-yuMiWaIu6D-VQepEjfkgtTxK2cBXBF7GgQZgxo3gCtN1XrM8dBNon3Kq1BGkpMW0cytcSfGKN_Jab2APIOR85fsv8Sahe9kRFURushGuwFMifJughk8EW8wKh-rcp6PuwJQeJZlHsNTciIIiAn1JUgX1w3mhj6Fqa4cE1_lWs");
+        .button{
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            color: var(--color-on-primary, #FFFFFF);
+            background-color: var(--color-primary, #38C0DA);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.15s ease;
+
+            &:hover {
+                //agrandar tamaño del boton
+                transform: scale(1.08);
+                transform-origin: center;
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
             }
         }
     }
