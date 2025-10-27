@@ -57,6 +57,7 @@ body {
   --color-black: #000000;
   --color-white: #FFFFFF;
   --color-gray-light: #E0E0E0;
+  --color-gray-lightest: #F5F5F5;
   --color-gray: #9E9E9E;
   --color-gray-dark: #424242;
 }
@@ -169,7 +170,20 @@ $space-scale: (
     4: 1rem,     // 16px
     5: 1.5rem,   // 24px
     6: 2rem,     // 32px
-    7: 3rem      // 48px
+    7: 3rem,     // 48px
+    8: 4rem,     // 64px
+    9: 5rem,     // 80px
+    10: 6rem,    // 96px
+    11: 7rem,    // 112px
+    12: 8rem,    // 128px
+    13: 9rem,    // 144px
+    14: 10rem,   // 160px
+    15: 12rem,   // 192px
+    16: 14rem,   // 224px
+    17: 16rem,   // 256px
+    18: 18rem,   // 288px
+    19: 20rem,   // 320px
+    20: 24rem    // 384px
 );
 
 @each $key, $value in $space-scale {
@@ -265,4 +279,14 @@ $container-padding-x: 1rem;
     .text-6xl { font-size: $fs-3xl; }
     .text-5xl { font-size: $fs-2xl; }
     .text-4xl { font-size: $fs-xl; }
+}
+
+/* Centrar texto horizontalmente */
+.text-center {
+    text-align: center;
+}
+
+/* Variante con !important para sobrescribir estilos inline o específicos */
+.text-center-important {
+    text-align: center !important;
 }

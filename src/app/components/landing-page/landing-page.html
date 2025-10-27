@@ -1,4 +1,4 @@
-<header>
+<header class="container">
     <a routerLink="/" class="logo">
         <img src="kiubit.svg" alt="Kiubit Logo" class="logo-icon ">
         <span class="logo-text font-black">Kiubit</span>
@@ -19,18 +19,89 @@
     <section class="hero">
         <div class="container px-6">
             <h1 class="text-7xl">Domina las matemáticas con Kiubit</h1>
-            <p class="text-lg">Aprende a tu ritmo con nuestros cursos en linea, diseñados para todos los niveles.</p>      
+            <p class="text-lg">Aprende a tu ritmo con nuestros cursos en linea, diseñados para todos los niveles.</p>
             <button class="button">Explorar Cursos</button>
         </div>
     </section>
-    <section class="about">
-        <div class="px-6">
-            <h1 class="text-7xl">Domina las matemáticas con Kiubit</h1>
-            <p class="text-lg">Aprende a tu ritmo con nuestros cursos en linea, diseñados para todos los niveles.</p>      
-            <button class="button">Explorar Cursos</button>
+    <section class="about py-10">
+        <div class="px-6 container text-center">
+            <h1 class="text-4xl">Acerca de Kiubit</h1>
+            <p class="text-lg">Kiubit es tu plataforma ideal para aprender matemáticas de forma interactiva y efectiva.
+            </p>
+            <p class="text-lg">Ofrecemos cursos desde nivel básico hasta avanzado, con lecciones en video, ejercicios
+                prácticos y soporte personalizado.</p>
+        </div>
+    </section>
+    <section class="cursos-destacados py-10">
+        <div class="text-center px-6 container">
+            <div class="titulo text-4xl">Cursos Destacados</div>
+            <div class="cursos">
+                @for(curso of cursosDestacados; track curso.id) {
+                <div class="curso">
+                    <img [src]="curso.imagenUrl" [alt]="curso.titulo" class="curso-imagen">
+                    <h2 class="curso-titulo text-2xl">{{curso.titulo}}</h2>
+                    <p class="curso-descripcion p-4">{{curso.descripcion}}</p>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+    <section class="testimonios py-10">
+        <div class="px-6 container text-center">
+            <div class="titulo text-4xl">Testimonios</div>
+            <div class="testimonios-lista">
+                @for (item of testimonios; track item.id) {
+                <div class="testimonio">
+                    <div class="testimonio-cabecera">
+                        <img [src]="item.imagenUrl" [alt]="item.nombre" class="testimonio-imagen">
+                        <div class="testimonio-info">
+                            <div class="testimonio-autor">{{item.nombre}}</div>
+                            <div class="estrellas">
+                                @for (estrella of [1, 2, 3, 4, 5]; track $index) {
+                                <span class="estrella" [class.filled]="estrella <= item.calificacion"></span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonio-text p-4">"{{item.comentario}}"</p>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+    <section class="metodo py-10">
+        <div class="px-6 container text-center">
+            <h1 class="text-4xl">Nuestro Método de Enseñanza</h1>
+            <p class="text-lg">En Kiubit, creemos en un enfoque práctico y personalizado para el aprendizaje de las
+                matemáticas. Nuestros cursos están diseñados para adaptarse a tu ritmo y estilo de aprendizaje,
+                asegurando que cada estudiante pueda alcanzar su máximo potencial.</p>
+        </div>
+    </section>
+    <section class="registrate py-10">
+        <div class="px-6 container text-center">
+            <h1 class="text-4xl">Ábrete camino hacia el éxito académico</h1>
+            <p class="text-lg">Comienza hoy mismo y transforma tu futuro con Kiubit.</p>
+            <button class="button">Registrate</button>
         </div>
     </section>
 </main>
 <footer>
-    <p>&copy; 2024 Kiubit. All rights reserved.</p>
+    <div class="container py-6">
+        <div class="footer-nav px-6 container text-center">
+            <nav>
+                <ul class="footer-nav">
+                    <li><a routerLink="/privacy" role="menuitem" tabindex="0">Política de Privacidad</a></li>
+                    <li><a routerLink="/terms" role="menuitem" tabindex="0">Términos de Servicio</a></li>
+                    <li><a routerLink="/contact" role="menuitem" tabindex="0">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="social-media">
+                <a role="menuitem" tabindex="0" aria-label="Facebook" class="social-icon facebook"></a>
+                <a role="menuitem" tabindex="0" aria-label="Twitter" class="social-icon pinterest"></a>
+                <a role="menuitem" tabindex="0" aria-label="Instagram" class="social-icon instagram"></a>
+            </div>
+        </div>
+        <div class="separador"></div>
+        <p>&copy; 2024 Kiubit. All rights reserved.</p>
+    </div>
 </footer>
