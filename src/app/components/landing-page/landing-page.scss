@@ -316,6 +316,24 @@ main {
             }
         }
     }
+    .metodo {
+        padding: 40px 20px;
+        text-align: center;
+        background-image: url("https://ff636f43e6.cbaul-cdnwnd.com/e0eef4fe6f99295f30f83e561ff2c5a0/200000613-1f9731f975/700/Students%20watching%20webinar%20on%20computer.webp?ph=ff636f43e6");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        .metodo-titulo-destacado {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+            background-color: var(--primary, #38C0DA);
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+        }
+    }
 }
 
 footer {
